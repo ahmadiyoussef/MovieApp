@@ -41,7 +41,7 @@ class MainViewModelTest {
         // Then: live data should contains success value
         assert(viewModel.movies.value is Resource.Success)
         val usersResponse = (viewModel.movies.value as Resource.Success).data
-        Assert.assertEquals(usersResponse, fakeMovies)
+        Assert.assertEquals(usersResponse, fakeMovies.movieList)
     }
 
 

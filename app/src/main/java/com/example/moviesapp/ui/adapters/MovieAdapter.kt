@@ -24,6 +24,7 @@ class MovieAdapter(private val movieList: List<Movie>) :
         val movie = movieList[position]
         holder.tvRating.text = movie.vote_average.toString()
         holder.tvVote.text = movie.vote_count.toString()
+        holder.tvName.text = movie.name
         val moviePosterURL = POSTER_BASE_URL + movie?.poster_path
         Glide.with(holder.itemView.context)
             .load(moviePosterURL)
@@ -39,6 +40,7 @@ class MovieAdapter(private val movieList: List<Movie>) :
         val tvRating: TextView = itemView.findViewById(R.id.tvRating)
         val tvVote: TextView = itemView.findViewById(R.id.tvVote)
         val ivMovie: ImageView = itemView.findViewById(R.id.ivMovie)
+        val tvName: TextView = itemView.findViewById(R.id.tvMovieName)
     }
 }
 

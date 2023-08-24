@@ -7,6 +7,7 @@ import com.example.moviesapp.util.Constants.BASE_URL
 import com.example.moviesapp.util.Constants.DATABASE_NAME
 import com.example.moviesapp.data.local.MovieDao
 import com.example.moviesapp.data.local.MovieItemDatabase
+import com.example.moviesapp.data.local.MovieLocalDataSource
 import com.example.moviesapp.repositories.MovieRepository
 import dagger.Module
 import dagger.Provides
@@ -17,13 +18,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@InstallIn(SingletonComponent::class)
+
 @Module
+@InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Singleton
     @Provides
-    fun provideShoppingItemDatabase(
+    fun provideMovieItemDatabase(
         @ApplicationContext context: Context
     ) = Room.databaseBuilder(context, MovieItemDatabase::class.java, DATABASE_NAME).build()
 
@@ -31,9 +33,15 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideShoppingDao(
+    fun provideMovieDao(
         database: MovieItemDatabase
-    ) = database.shoppingDao()
+    ) = database.movieDa()
+
+    @Provides
+    @Singleton
+    fun provideMovieLocalDataSource(movieDao: MovieDao): MovieLocalDataSource {
+        return MovieLocalDataSource(movieDao)
+    }
 
     @Singleton
     @Provides

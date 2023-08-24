@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:background="@color/dark_gary"
     android:layout_margin="5dp"
     app:cardCornerRadius="5dp"
     app:cardElevation="5dp">
@@ -12,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray"
+        android:background="@color/dark_gary"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -41,6 +42,7 @@
                     android:id="@+id/ivRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
                     android:src="@drawable/ic_star"/>
 
                 <TextView
@@ -48,7 +50,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8.7"
-                    android:textSize="@dimen/text_size_12sp"
+                    android:layout_gravity="bottom"
+                    android:textSize="@dimen/text_size_13sp"
                     android:textColor="@color/white" />
             </LinearLayout>
 
@@ -63,19 +66,32 @@
                     android:id="@+id/imVote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
                     android:src="@drawable/ic_vote" />
 
                 <TextView
                     android:id="@+id/tvVote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
                     android:text="128"
-                    android:textSize="@dimen/text_size_12sp"
+                    android:textSize="@dimen/text_size_13sp"
                     android:textColor="@color/white" />
             </LinearLayout>
 
 
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMovieName"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="movie"
+            android:layout_marginBottom="@dimen/margin_4dp"
+            android:layout_gravity="start"
+            android:textSize="@dimen/margin_12dp"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
