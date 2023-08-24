@@ -1,7 +1,8 @@
-package com.example.moviesapp.api
+package com.example.guidomia.repository
 
 
-import com.example.henripotierlivres.util.Constants.BASE_URL
+import com.example.moviesapp.data.remote.MoviesApi
+import com.example.moviesapp.util.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
