@@ -23,7 +23,7 @@ class MovieRepository @Inject constructor(
 
     }
 
-// this function will be used to manage offline mode,
+// this function will be used to manage offline mode, i haven't used it because i have an issue with DI when i try to inject database with hilt
     /*  suspend fun getMovies(): List<Movie> {
        val localMovies = localDataSource.getMovieList()
        if (localMovies.isNotEmpty()) return localMovies
